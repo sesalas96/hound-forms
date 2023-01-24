@@ -1,0 +1,17 @@
+{
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#7e6929",
+    "activityBar.activeBorder": "#ebb205",
+    "activityBar.background": "#22384D",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#26c16e",
+    "statusBar.background": "#7e6929",
+    "statusBar.foreground": "#e7e7e7"
+  },
+  "liveServer.settings.port": 5501
+}
