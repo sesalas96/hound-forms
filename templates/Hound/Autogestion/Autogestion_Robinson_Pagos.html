@@ -1,0 +1,524 @@
+<html style="background-color: #5f8bd2;"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://houndsoftware.net/assetstmp/fav.png?_t=1673298107">
+    <!-- Facebook sharing information tags -->
+    <meta property="og:title" content="Apertura de cuenta">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <title>Apertura de cuenta</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+  
+      html {
+        box-sizing: border-box;
+      }
+  
+      .main-container {
+        margin: 0;
+        padding: 0;
+        background-color: #003ea1;
+        overflow: none;
+      }
+  
+      #create-account-form {
+        background-color: #003ea1;
+        margin: 0px auto;
+        font-family: Raleway;
+        padding: 0 40px;
+        min-width: 300px;
+        max-width: 400px;
+      }
+  
+      h1 {
+        margin-top: 2vh;
+        text-align: center;
+        color: white;
+      
+      }
+  
+      h2 {
+        text-align: left;
+        color: white;
+        font-size: 22px;
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+      }
+  
+      p {
+        color: white;
+        margin: 0;
+      }
+  
+      input {
+        padding: 10px;
+        width: 100%;
+        font-size: 17px;
+        font-family: Raleway;
+        border: 1px solid #aaaaaa;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+  
+      .text-area {
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+        max-height: 20vh;
+        min-height: 10vh;
+        margin-bottom: 20px;
+        font-family: Raleway;
+        font-size: 17px;
+        padding: 10px;
+        border: 1px solid #aaaaaa;
+        border-radius: 10px;
+      }
+  
+      /* Mark input boxes that gets an error on validation: */
+      .invalid {
+        background-color: #ffdddd !important;
+      }
+  
+      .hide {
+        display: none;
+      }
+  
+      /* Hide all steps by default: */
+      .tab {
+        display: none;
+      }
+  
+      button {
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 17px;
+        font-family: Raleway;
+        cursor: pointer;
+      }
+  
+      button:hover {
+        opacity: 0.8;
+      }
+  
+      #prevBtn {
+        width: 120px;
+        background-color: rgb(241, 238, 238);
+        border-radius: 20px;
+        color: #003ea1;
+        margin-bottom: 30px;
+        margin-top: 40px;
+        font-weight: 900;
+        height: 45px;
+      }
+  
+      #nextBtn {
+        width: 120px;
+        background-color: #626b74;
+        border-radius: 20px;
+        margin-left: 20px;
+        margin-top: 40px;
+        margin-bottom: 30px;
+        font-weight: 900;
+        height: 45px;
+      }
+  
+      /* Make circles that indicate the steps of the form: */
+      .step {
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbbbbb;
+        border: none;
+        border-radius: 50%;
+        display: inline-block;
+        opacity: 0.5;
+      }
+  
+      .step.active {
+        opacity: 1;
+      }
+  
+      /* Mark the steps that are finished and valid: */
+      .step.finish {
+        background-color: white;
+        opacity: 1;
+      }
+  
+      .img-container {
+        height: 170px;
+        width: 170px;
+        background-color: rgba(218, 217, 217, 0.354);
+        border-radius: 5px;
+        margin: 40px auto;
+        padding: 40px;
+      }
+  
+      .img-wrapper {
+        height: 90px;
+        width: 90px;
+      }
+  
+      .short-input {
+        background-color: white;
+        max-width: 300px;
+      }
+  
+      .btn {
+        display: flex;
+        border-radius: 50px;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        font-weight: 800;
+        font-size: 20px;
+        margin: 0 auto;
+      }
+  
+      .btn-capturar {
+        background-color: #626b74;
+        width: 90%;
+        margin-bottom: 30px;
+      }
+  
+      .img-program {
+        height: 35px;
+        width: 35px;
+      }
+  
+      .btn-pagos {
+        background-color: rgb(241, 238, 238);
+        margin-top: 30px;
+        margin-bottom: 30px;
+        min-width: 70%;
+      }
+  
+      .btn-compromiso {
+        background-color: #626b74;
+        min-width: 70%;
+      }
+  
+      .btn-agenda {
+        background-color: #626b74;
+        min-width: 70%;
+      }
+  
+      .btn-action {
+        display: flex;
+        background-color: #626b74;
+        border-radius: 50px;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        font-weight: 800;
+        font-size: 14px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 60%;
+      }
+  
+      .btn-next-container {
+        float: right;
+        margin-right: -40px;
+      }
+  
+      .color-blue {
+        color: #003ea1;
+      }
+  
+      .center {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+  
+      .img-container-id {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 34.5vh;
+        gap: 20px;
+      }
+  
+      .img-id {
+        height: 170px;
+        width: 250px;
+      }
+  
+      .img-container-logo {
+        background-color: #003ea1;
+        margin: 0 20%;
+      }
+  
+      .img-logo {
+        border: 0;
+        line-height: 100%;
+        outline: none;
+        text-decoration: none;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        max-width: 130px !important;
+      }
+  
+      .footer {
+        height: 90px;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+  
+      /* Mobiles */
+      @media only screen and (max-width: 600px) {
+  
+        .main-container {
+          height: calc(100vh - 70px);
+        }
+  
+        .img-container-logo {
+          margin: 0 40px;
+        }
+  
+        .btn {
+          min-width: 50vw;
+          padding-left: 5vw;
+        }
+  
+        .btn-capturar {
+          background-color: #626b74;
+          padding-left: 20px;
+          min-width: 50vw;
+        }
+  
+        .btn-action {
+          width: 85%;
+        }
+  
+        .btn-next-container {
+          margin-right: -20px;
+        }
+  
+        .img-container-id {
+          height: 30vh;
+        }
+  
+        h1 {
+          font-size: 30px;
+        }
+      }
+    </style>
+  </head>
+  
+  <body style="height: inherit;">
+    <div class="main-container">
+      <div class="img-container-logo">
+        <img class="img-logo" src="https://houndsoftware.net/assetstmp/MiBanco.png">
+      </div>
+  
+      <form id="create-account-form" action="/create-new-account" onerror="handleError()">
+        <!-- Circles which indicates the steps of the form: -->
+        <h1>Autogestion</h1>
+        <div style="text-align: center; margin-top: 30px;">
+          <span class="step finish active" onclick="nextPrev(-1)"></span>
+          <span class="step finish"></span>
+          <span class="step finish"></span>
+          <span class="step"></span>
+        </div>
+        <!-- One "tab" for each step in the form: -->
+        <div class="tab" style="display: block;">
+          <div class="img-container">
+            <img class="img-wrapper" src="https://houndsoftware.net/assetstmp/wallet.png?_t=1673298107" alt="">
+          </div>
+          <h2>Selección de Producto</h2>
+          <p>Indiquenos el tipo de cuenta</p>
+          <button class="btn btn-pagos" type="button" id="pagos-btn" onclick="selectOperation(`pagos`)">
+            <img class="img-program" src="https://houndsoftware.net/assetstmp/ahorros.png" alt="">
+            <p class="color-blue">Pagos&nbsp;&nbsp;&nbsp;</p>
+          </button>
+          <button class="btn btn-compromiso" type="button" id="compromiso-btn" onclick="selectOperation(`compromiso`)">
+            <img class="img-program" src="https://houndsoftware.net/assetstmp/compromiso.png" alt="">
+            <p class="color-blue">Compromiso&nbsp;&nbsp;&nbsp;</p>
+          </button>
+          <button class="btn btn-agenda" type="button" id="agenda-btn" onclick="selectOperation(`agenda`)">
+            <img class="img-program" src="https://houndsoftware.net/assetstmp/ahorros.png" alt="">
+            <p class="color-blue">Agenda&nbsp;&nbsp;&nbsp;</p>
+          </button>
+          <input id="type-operation" class="hide" name="type-operation">
+        </div>
+        <div class="tab" style="display: none;">
+          <h2>Datos de contacto</h2>
+          <input id="name" class="short-input" autocomplete="off" placeholder="Nombre completo" name="name" oninput="this.className = 'short-input'">
+          <input class="short-input" autocomplete="off" placeholder="Correo electrónico" name="email" oninput="this.className = 'short-input'">
+          <input class="short-input" autocomplete="off" placeholder="Teléfono móvil" name="tel-movil" oninput="this.className = 'short-input'">
+          <input class="short-input" autocomplete="off" placeholder="Monto" name="monto" oninput="this.className = 'short-input'">
+          <textarea class="text-area" placeholder="Dirección de residencia" id="address" name="address" oninput="this.className = 'text-area'" maxlength="250"></textarea>
+          <input class="short-input" autocomplete="off" placeholder="DUI" name="DUI" oninput="this.className = 'short-input'">
+        </div>
+        <div class="tab" style="display: none;">
+          <div class="center">
+            <h2>
+              Autogestion de Pago
+            </h2>
+            <p>Seleccione el metodo de pago.</p>
+              
+                <input type="radio" id="html" name="fav_language" value="HTML" class="">
+                  <label for="html">Tarjeta de debito</label><br>
+                <input type="radio" id="css" name="fav_language" value="CSS" class="">
+                  <label for="css">Tarjeta de credito</label><br>
+                <input type="radio" id="javascript" name="fav_language" value="Transferencia bancaria" class="">
+                   <label for="javascript">Transferencia bancaria</label>
+              
+          
+    
+          </div>
+        </div></form>
+        <div class="tab" style="display: none;">
+          <h2>Compromiso de pago</h2>
+          <input id="monto_compromiso" class="short-input invalid" autocomplete="off" placeholder="Monto compromiso" name="mon_comp" oninput="this.className = 'short-input'">
+            
+          <form style="margin-top: 20px; margin-left: 30px;">
+            <label for="datemin">Fecha de pago:</label>
+            <input type="date" id="datemin" name="datemin" min="2000-01-02" class=" invalid">
+          </form>
+        </div>
+        <div class="tab">
+          <h2>Agendar cita</h2>
+          <input class="short-input" autocomplete="off" placeholder="Correo electrónico" name="email" oninput="this.className = 'short-input'">
+          <input class="short-input" autocomplete="off" placeholder="Teléfono móvil" name="tel-movil" oninput="this.className = 'short-input'">
+            
+          <form style="margin-top: 20px; margin-left: 30px;">
+            <label for="datemin">Fecha de cita:</label>
+            <input type="date" id="datemin" name="datemin" min="2000-01-02">
+          </form>
+        </div>
+        <div class="footer">
+          <button type="button" id="prevBtn" onclick="nextPrev(-1)" style="display: none;">
+            Atrás
+          </button>
+          <button type="button" id="nextBtn" onclick="nextPrev(1)" style="display: none;">Adelante</button>
+        </div>
+    </div>
+    
+    <script>
+      var currentTab = 0; // Current tab is set to be the first tab (0)
+      showTab(currentTab); // Display the current tab
+  
+      function handleError() {
+        throw new Error('1')
+      }
+  
+      function handleError2() {
+        console.log("Error ")
+      }
+  
+      function showTab(n) {
+        // This function will display the specified tab of the form...
+        var x = document.getElementsByClassName('tab');
+        x[n].style.display = 'block';
+        //... and fix the Previous/Next buttons:
+        if (n == 0) {
+          document.getElementById('prevBtn').style.display = 'none';
+          document.getElementById('nextBtn').style.display = 'none';
+        } else {
+          document.getElementById('prevBtn').style.display = 'inline';
+          document.getElementById('nextBtn').style.display = 'inline';
+        }
+        if (n == x.length - 1) {
+          document.getElementById('nextBtn').innerHTML = 'Enviar';
+        } else {
+          document.getElementById('nextBtn').innerHTML = 'Adelante';
+        }
+        //... and run a function that will display the correct step indicator:
+        fixStepIndicator(n);
+      }
+  
+      function nextPrev(n) {
+        // This function will figure out which tab to display
+        var x = document.getElementsByClassName("tab");
+        // Exit the function if any field in the current tab is invalid:
+        if (n == 1 && !validateForm()) return false;
+        // Hide the current tab:
+        x[currentTab].style.display = "none";
+        // Increase or decrease the current tab by 1:
+        currentTab = currentTab + n;
+        // if you have reached the end of the form...
+        if (currentTab >= x.length) {
+          // ... the form gets submitted:
+          document.getElementById("create-account-form").submit();
+          return false;
+        }
+        // Otherwise, display the correct tab:
+        showTab(currentTab);
+      }
+  
+      function handleExternalAction(msg) {
+        console.log('External action:', msg);
+      }
+  
+      function validateForm() {
+        // This function deals with validation of the form fields
+        var x,
+          y,
+          i,
+          valid = true;
+        x = document.getElementsByClassName('tab');
+        y = x[currentTab].getElementsByTagName('input');
+        t = x[currentTab].getElementsByTagName('textarea');
+        // A loop that checks every input field in the current tab:
+        if (currentTab === 0) {
+          valid = true;
+        } else {
+          for (i = 0; i < y.length; i++) {
+            // If a field is empty...
+            if (y[i].value == '') {
+              // add an "invalid" class to the field:
+              y[i].className += ' invalid';
+              // and set the current valid status to false
+              valid = false;
+            } else {
+              y[i].className += '';
+            }
+          }
+          for (i = 0; i < t.length; i++) {
+            // If a field is empty...
+            if (t[i].value == '') {
+              // add an "invalid" class to the field:
+              t[i].className += ' invalid';
+              // and set the current valid status to false
+              valid = false;
+            } else {
+              t[i].className += '';
+            }
+          }
+        }
+        // If the valid status is true, mark the step as finished and valid:
+        if (valid) {
+          document.getElementsByClassName('step')[currentTab].className += ' finish';
+        }
+        return valid; // return the valid status
+      }
+  
+      function selectOperation(type) {
+        document.getElementById('type-operation').value = type;
+        nextPrev(1);
+      }
+  
+      function fixStepIndicator(n) {
+        // This function removes the "active" class of all steps...
+        var i,
+          x = document.getElementsByClassName('step');
+        for (i = 0; i < x.length; i++) {
+          x[i].className = x[i].className.replace(' active', '');
+        }
+        //... and adds the "active" class on the current step:
+        x[n].className += ' active';
+      }
+    </script>
+  
+  
+  </body></html>
