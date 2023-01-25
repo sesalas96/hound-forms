@@ -351,7 +351,7 @@
       }
 
       .btn {
-        min-width: 70vw;
+        min-width: 50vw;
         padding-left: 0vw;
       }
 
@@ -502,7 +502,17 @@
       if (event.data.isCamaraShotsReady) {
         nextPrev(1)
       }
+      if (event.data.channel) {
+        console.log("Dios mío", data)
+      }
     };
+
+    window.addEventListener('message', function (e) {
+    const data = JSON.parse(e.data);
+    // Where does the message come from
+    const channel = data.channel;
+    console.log("Holaaaaa", channel)
+});
 
     function showTab(n) {
       // This function will display the specified tab of the form...
