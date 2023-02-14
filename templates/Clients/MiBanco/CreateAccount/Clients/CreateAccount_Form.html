@@ -10,7 +10,11 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
   <title>Apertura de cuenta</title>
   <style>
-    #outlook a{padding:0;} /* Force Outlook to provide a "view in browser" button. */
+    #outlook a {
+      padding: 0;
+    }
+
+    /* Force Outlook to provide a "view in browser" button. */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -441,7 +445,7 @@
       <div class="tab">
         <div class="center validation-container">
           <h2>
-            Validacón de identificaión
+            Validación de identificación
           </h2>
           <button class="btn-action" type="button" id="sms-btn" onclick="selectAuthMethod(`sms`)">
             <img class="img-program-2" src="https://houndsoftware.net/assetstmp/message.png" alt="" />
@@ -508,11 +512,11 @@
     };
 
     window.addEventListener('message', function (e) {
-    const data = JSON.parse(e.data);
-    // Where does the message come from
-    const channel = data.channel;
-    console.log("Holaaaaa", channel)
-});
+      const data = JSON.parse(e.data);
+      // Where does the message come from
+      const channel = data.channel;
+      console.log("Holaaaaa", channel)
+    });
 
     function showTab(n) {
       // This function will display the specified tab of the form...

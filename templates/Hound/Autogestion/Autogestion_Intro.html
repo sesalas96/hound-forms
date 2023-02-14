@@ -10,10 +10,6 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
   <title>Sistema de autogesti&oacute;n de clientes</title>
   <style>
-    #outlook a {
-      padding: 0;
-    }
-
     /* Force Outlook to provide a "view in browser" button. */
     * {
       box-sizing: border-box;
@@ -54,20 +50,22 @@
       margin: 0 25%;
     }
 
-
     .btn-action {
       display: flex;
       width: 300px;
       background-color: #22384D;
-      color: whitesmoke;
       height: 40px;
       border-radius: 50px;
       align-items: center;
       justify-content: center;
-      font-weight: 700;
-      font-size: 1em;
       text-decoration: none;
       margin: 20px 0 70px 0;
+    }
+
+    .btn-txt {
+      color: whitesmoke;
+      font-weight: 700;
+      font-size: 1em;
     }
 
     .center {
@@ -210,11 +208,12 @@
       <h1>Sistema de autogesti&oacute;n de clientes</h1>
       <div class="body-container">
         <h2>Estimado(a) ${StartEvent_135xoet.nombre},</h2>
-
         <p>En el sistema de autogesti&oacute;n de clientes, puede realizar pagos en l&iacute;nea, programar compromisos
           de pago y agendar citas con un funcionario, desde el men&uacute; de gestiones.</p>
         <a href="https://form.jotform.com/houndsoftware/autogestion?interruptioncode=${ServiceTask_1p3ii1s.id}&amp;correo=${StartEvent_135xoet.email}&amp;nombre=${StartEvent_135xoet.nombre}&amp;telefono=${StartEvent_135xoet.telefono}&amp;pago=${StartEvent_135xoet.pago}&amp;monto=${StartEvent_135xoet.pago}"
-          class="btn-action">Ir al sistema de autogestiones</a>
+          class="btn-action">
+          <p class="btn-txt">Ir al sistema de autogestiones</p>
+        </a>
       </div>
     </div>
     <div class="footer">
