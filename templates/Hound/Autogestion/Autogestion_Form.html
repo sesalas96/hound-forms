@@ -168,7 +168,7 @@
       font-size: 1.5em;
       font-weight: 900;
       color: whitesmoke;
-      background-color: rgb(115, 147, 137);
+      background-color: rgba(115, 147, 137, 0.584);
       padding: 5px 15px;
       margin: 10px;
       border-radius: 10px;
@@ -200,11 +200,10 @@
 
     .radio-row {
       display: flex;
-      justify-content: space-around;
+      justify-content: flex-start;
       align-items: center;
-      gap: 10px;
-      height: 50px;
-      width: 250px;
+      gap: 40px;
+      height: auto;
     }
 
     .radio {
@@ -212,13 +211,12 @@
       flex-wrap: wrap;
       justify-content: space-evenly;
       align-items: center;
-      gap: 50px;
-      margin-top: 4vh;
-      margin-bottom: 4vh;
+      gap: 20px;
+      margin-top: 3vh;
+      margin-bottom: 3vh;
     }
 
     .radio input {
-      margin-top: 20px;
       height: 20px;
       width: 20px;
       -webkit-appearance: none;
@@ -232,6 +230,7 @@
       color: #bdbdbdbd;
       font-size: 1em;
       transition: all 300ms linear;
+      margin-bottom: 0;
     }
 
     .radio input:checked {
@@ -402,9 +401,9 @@
     }
 
     .img-bancos {
-      height: 70px;
-      width: 180px;
-      border-radius: 10px;
+      height: 50px;
+      width: 130px !important;
+      border-radius: 5px;
     }
 
     .banco-container {
@@ -524,10 +523,12 @@
 
       .img-card {
         height: 15vmin;
+        margin-top: 0;
       }
 
       .img-card2 {
         height: 9vmin;
+        margin-top: 0;
       }
 
       .hd-txt {
@@ -543,12 +544,6 @@
         margin-left: 0px;
         gap: 10px;
         width: 100%;
-      }
-
-      .radio-row {
-        display: flex;
-        align-items: flex-start;
-        gap: 20px;
       }
 
       .header-txt {
@@ -615,7 +610,7 @@
 
       .sub-header {
         font-size: 1em;
-        margin-top: 2vh;
+        margin-top: 3vh;
         margin-bottom: 3vh;
       }
 
@@ -768,8 +763,8 @@
             </div>
           </div>
         </div>
-        <div class="date-row2">
-          <p class="header-txt">Valor a pagar</p><input type="number" min="1" max="1000000" id="amount-to-pay"
+        <div class="date-row">
+          <p class="header-txt">Monto a pagar</p><input type="number" min="1" max="1000000" id="amount-to-pay"
             class="short-input" autocomplete="off" placeholder="$$$" name="amount-to-pay"
             oninput="this.className = 'short-input'" />
         </div>
@@ -816,7 +811,7 @@
       <div class="tab card">
         <div class="validation-container">
           <h2 class="h2-gestion">Institución Bancaria</h2>
-          <div class="flex-row center" style="margin-top: 5vh;margin-bottom: 5vh;">
+          <div class="flex-row center" style="margin-top: 3vh;margin-bottom: 3vh;">
             <p>⚠️ Fecha límite para pagar</p>
             <p class="value-txt">12/12/23</p>
           </div>
@@ -862,15 +857,16 @@
               <p>Fecha Límite de Pago</p>
               <p class="value-txt">12-22-23</p>
             </div>
-            <div class="date-row">
-              <p class="header-txt">⚠️ Fecha de Compromiso de Pago</p>
-              <input type="date" class=" short-input" autocomplete="off" placeholder="MM/YY" id="type-auth"
-                name="type-auth" oninput="this.className = 'short-input'" />
-              <p class="pay-txt">Valor a pagar</p>
-              <input type="number" min="1" max="1000000" id="amount-to-pay" class="short-input" autocomplete="off"
-                placeholder="$$$" name="amount-to-pay" oninput="this.className = 'short-input'" />
-            </div>
+
           </div>
+        </div>
+        <div class="date-row">
+          <p class="header-txt">⚠️ Fecha de Compromiso de Pago</p>
+          <input type="date" class=" short-input" autocomplete="off" placeholder="MM/YY" id="type-auth" name="type-auth"
+            oninput="this.className = 'short-input'" />
+          <p class="pay-txt">Monto a pagar</p>
+          <input type="number" min="1" max="1000000" id="amount-to-pay" class="short-input" autocomplete="off"
+            placeholder="$$$" name="amount-to-pay" oninput="this.className = 'short-input'" />
         </div>
       </div>
       <div class="tab">
@@ -893,12 +889,12 @@
               <p>Fecha Límite de Pago</p>
               <p class="value-txt">12-22-23</p>
             </div>
-            <div class="date-row">
-              <p class="header-txt">⚠️ Fecha de la llamada</p>
-              <input type="datetime-local" class="short-input" id="type-auth" name="type-auth"
-                oninput="this.className = 'short-input'" value="2018-06-12T19:30" />
-            </div>
           </div>
+        </div>
+        <div class="date-row">
+          <p class="header-txt">⚠️ Fecha de la llamada</p>
+          <input type="datetime-local" class="short-input" id="type-auth" name="type-auth"
+            oninput="this.className = 'short-input'" value="2018-06-12T19:30" />
         </div>
       </div>
       <div class="tab">
@@ -948,7 +944,7 @@
           document.getElementById('nextBtn').style.display = 'inline';
           document.getElementById('stepper').style.display = 'inline';
         }
-        if (n == x.length - 2) {
+        if (n == 3 || n == 4 || n == 5 || n == 2) {
           document.getElementById('nextBtn').innerHTML = 'Finalizar';
         } else {
           document.getElementById('nextBtn').innerHTML = 'Siguiente';
@@ -966,12 +962,8 @@
         // Hide the current tab:
         x[currentTab].style.display = "none";
         // Increase or decrease the current tab by 1:
-        console.log(currentTab)
         if (n === -1) {
           switch (currentTab) {
-            case 1:
-              currentTab = 0;
-              break;
             case 2:
               currentTab = currentTab + n;
               break;
@@ -985,13 +977,18 @@
               currentTab = 0;
               break;
             default:
-              currentTab = n;
+              currentTab += n;
               break;
           }
         } else {
           if (currentTab === 1 && (t[0].checked || t[1].checked)) {
+            console.log("Hola 1")
             t[0].checked ? currentTab += n : currentTab = n + 2;
+          } else if (currentTab === 1) {
+            console.log("Hola 2")
+            currentTab = currentTab + 6;
           } else if (currentTab === 2) {
+            console.log("Hola 3")
             currentTab = currentTab + 4;
           } else if (currentTab === 3) {
             currentTab = currentTab + 3;
@@ -1013,9 +1010,7 @@
           setTimeout(() => {
             window.top.postMessage({ isReady: true, values: obj }, '*')
           }, 3000);
-          // return false;
         }
-        // Otherwise, display the correct tab:
       }
 
       function handleExternalAction(msg) {
@@ -1059,10 +1054,6 @@
               t[i].className += '';
             }
           }
-        }
-        // If the valid status is true, mark the step as finished and valid:
-        if (valid) {
-          document.getElementsByClassName('step')[currentTab].className += ' finish';
         }
         return valid; // return the valid status
       }
