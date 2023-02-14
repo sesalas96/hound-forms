@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/x-icon" href="https://houndsoftware.net/assetstmp/fav.png?_t=1673298107" />
   <!-- Facebook sharing information tags -->
-  <meta property="og:title" content="Apertura de cuenta" />
+  <meta property="og:title" content="Autogestión" />
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
-  <title>Apertura de cuenta</title>
+  <title>Autogestión</title>
   <style>
     #outlook a {
       padding: 0;
@@ -316,6 +316,11 @@
       margin-bottom: 3vh;
     }
 
+    .pwr-hound {
+      margin-top: 45px;
+      margin-right: 20px;
+    }
+
     .sub-header2 {
       margin-top: 6vh;
       margin-bottom: 5vh;
@@ -400,6 +405,14 @@
       height: auto;
     }
 
+    .send-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin-top: 15vh;
+    }
+
     .img-bancos {
       height: 50px;
       width: 130px !important;
@@ -452,7 +465,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 70vh;
+      height: 80vh;
       margin-left: -50px;
     }
 
@@ -466,8 +479,7 @@
       color: #fff;
       box-shadow: 9984px 0 0 0 #fff, 9999px 0 0 0 #fff, 10014px 0 0 0 #fff;
       animation: dot-typing 1.5s infinite linear;
-      margin-top: -27px;
-      margin-right: -150px;
+      margin-top: 10px;
     }
 
     @keyframes dot-typing {
@@ -513,6 +525,18 @@
 
     /* Mobiles */
     @media only screen and (max-width: 600px) {
+
+      .loading-form {
+        height: 80vh;
+        margin-left: 0px;
+      }
+
+
+      .pwr-hound {
+        margin-right: 0px;
+        margin: 0;
+        margin-top: 10vh;
+      }
 
       .img-card {
         height: 15vmin;
@@ -592,6 +616,7 @@
       }
 
       .img-container-logo {
+        flex-direction: column;
         margin: 20px 0px 0px 0px;
         height: 100px;
       }
@@ -680,20 +705,20 @@
 
 <body style="height: inherit;">
   <div class="main-container">
-    <div class="img-container-logo">
+    <div id="logo" class="img-container-logo">
       <img class="img-logo" src="../assets/HoundLogo.png">
       <span></span>
     </div>
 
     <form id="autogestion-form">
-      <div style="text-align: center; margin-bottom: 2vh;">
+      <h1 id="main-header" style="margin-top: 4vh;">Autogestión</h1>
+      <div style="text-align: center; margin-top: 4vh;">
         <div id="stepper">
           <span class="step"></span>
           <span class="step"></span>
           <span class="step"></span>
         </div>
       </div>
-      <h1>Autogestión</h1>
       <!-- Circles which indicates the steps of the form: -->
       <!-- Swither -->
       <div class="tab">
@@ -895,10 +920,17 @@
       </div>
       <div class="tab">
         <div class="loading-form">
-          <h2>
-            Enviando
-          </h2>
-          <div class="dot-typing"></div>
+          <div class="send-row">
+            <h2>
+              Enviando autogestión
+            </h2>
+            <div class="dot-typing"></div>
+          </div>
+          <div class="img-container-logo">
+            <h2 class="pwr-hound">Powered by</h2>
+            <img class="img-logo" src="../assets/HoundLogo.png">
+            <span></span>
+          </div>
         </div>
       </div>
       <div class="footer">
@@ -929,6 +961,12 @@
       });
 
       function showTab(n) {
+
+        if (n === 0) {
+          document.getElementById('logo').style.display = 'flex';
+        } else {
+          document.getElementById('logo').style.display = 'none';
+        }
         // This function will display the specified tab of the form...
         var x = document.getElementsByClassName('tab');
         x[n].style.display = 'block';
@@ -940,6 +978,10 @@
           document.getElementById('prevBtn').style.display = 'inline';
           document.getElementById('nextBtn').style.display = 'inline';
           document.getElementById('stepper').style.display = 'inline';
+        }
+        if (n === 6) {
+          document.getElementById('stepper').style.display = 'none';
+          document.getElementById('main-header').style.display = 'none';
         }
         if (n == 3 || n == 4 || n == 5 || n == 2) {
           document.getElementById('nextBtn').innerHTML = 'Finalizar';
