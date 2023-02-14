@@ -209,9 +209,9 @@
     .radio {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-evenly;
+      justify-content: center;
       align-items: center;
-      gap: 20px;
+      gap: 50px;
       margin-top: 3vh;
       margin-bottom: 3vh;
     }
@@ -693,7 +693,7 @@
     </div>
 
     <form id="autogestion-form">
-      <div style="text-align: center; margin-bottom: 30px;">
+      <div style="text-align: center; margin-bottom: 2vh;">
         <div id="stepper">
           <span class="step"></span>
           <span class="step"></span>
@@ -992,6 +992,10 @@
             currentTab = currentTab + 4;
           } else if (currentTab === 3) {
             currentTab = currentTab + 3;
+          } else if (currentTab === 4) {
+            currentTab = currentTab + 2;
+          } else if (currentTab === 5) {
+            currentTab = currentTab + 1;
           } else {
             currentTab = currentTab + n;
           }
@@ -1086,12 +1090,29 @@
         var i,
           x = document.getElementsByClassName('step');
         try {
+          let stepValue = 1
+          switch (n) {
+            case 3:
+              stepValue = 2
+              break;
+            case 4:
+              stepValue = 1
+              break;
+            case 5:
+              stepValue = 1
+              break;
+            case 6:
+              stepValue = 2
+              break;
+            default:
+              stepValue = n
+          }
 
           for (i = 0; i < x.length; i++) {
             x[i].className = x[i].className.replace('active', '');
           }
           //... and adds the "active" class on the current step:
-          x[currentTab].className += ' active';
+          x[stepValue].className += ' active';
         } catch (error) {
 
         }
