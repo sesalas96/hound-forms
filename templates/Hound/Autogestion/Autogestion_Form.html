@@ -714,7 +714,7 @@
           <p>Compromiso de pago</p>
         </button>
         <button class="btn btn-corriente" type="button" id="corriente-btn" onclick="selectOperation(`contact-center`)">
-          <img class="img-program" src="https://houndsoftware.net/assetstmp/coin-collecting.png" alt="" />
+          <img class="img-program" src="https://houndsoftware.net/assetstmp/coin-collecting.png" />
           <p>Agendar una cita</p>
         </button>
         <input id="type-operation" class="hide" id="operation" name="type-operation" />
@@ -764,22 +764,24 @@
           </div>
         </div>
         <div class="date-row">
-          <p class="header-txt">Monto a pagar</p><input type="number" min="1" max="1000000" id="amount-to-pay"
-            class="short-input" autocomplete="off" placeholder="$$$" name="amount-to-pay"
-            oninput="this.className = 'short-input'" />
+          <p class="header-txt">Monto a pagar</p>
+          <input type="number" min="1" max="1000000" id="payment-amount" class="short-input" autocomplete="off"
+            placeholder="$$$" name="payment-amount" oninput="this.className = 'short-input'" />
         </div>
         <div class="">
           <h2 class="h2-gestion">Seleccione el método de pago</h2>
           <div class="radio">
             <div class="radio-row">
-              <input type="radio" id="virtual" name="payment-method" value="virtual">
+              <input type="radio" id="virtual" name="payment-method-temp" onchange="selectPaymentMethod(`virtual`)">
               <p>Tarjeta de débito/crédito</p>
             </div>
             <div class="radio-row">
-              <input type="radio" id="presencial" name="payment-method" value="presencial">
+              <input type="radio" id="presencial" name="payment-method-temp"
+                onchange="selectPaymentMethod(`presencial`)">
               <p>Transferencia Bancaria</p>
             </div>
           </div>
+          <input class="hide" id="payment-method" name="payment-method" />
         </div>
       </div>
       <!-- Make a payment -->
@@ -792,17 +794,17 @@
           </div>
           <div class="flex-row">
             <p class="hd-txt">Número de la tarjeta</p>
-            <input class="short-input" autocomplete="off" placeholder="XXXXX XXXXX XXXXX XXXXX" id="type-auth"
-              name="type-auth" oninput="this.className = 'short-input'" />
+            <input class="short-input" autocomplete="off" placeholder="XXXXX XXXXX XXXXX XXXXX" id="card-holder"
+              name="card-holder" oninput="this.className = 'short-input'" />
           </div>
           <div class="flex-row">
             <p class="hd-txt">Fecha de expiración</p>
-            <input type="date" class=" short-input" autocomplete="off" placeholder="MM/YY" id="type-auth"
-              name="type-auth" oninput="this.className = 'short-input'" />
+            <input type="date" class=" short-input" autocomplete="off" placeholder="MM/YY" id="expired-date"
+              name="expired-date" oninput="this.className = 'short-input'" />
           </div>
           <div class="flex-row">
             <p class="hd-txt">CVC</p>
-            <input class="short-input" autocomplete="off" placeholder="123" id="type-auth" name="type-auth"
+            <input class="short-input" autocomplete="off" placeholder="123" id="cvv" name="cvv"
               oninput="this.className = 'short-input'" />
           </div>
         </div>
@@ -818,21 +820,22 @@
           <p>Indiquenos en donde realizará el pago</p>
           <div class="radio">
             <div class="radio-row">
-              <input type="radio" id="bac" name="banco-selected" value="bac">
+              <input type="radio" id="bac" name="bac" onchange="selectBank(`bac`)">
               <img class="img-bancos" src="../../assets/bac.png" id="headerImage" mc:label="header_image" />
             </div>
             <div class="radio-row">
-              <input type="radio" id="bn" name="banco-selected" value="bn">
+              <input type="radio" id="bn" name="bn" onchange="selectBank(`bn`)">
               <img class="img-bancos" src="../../assets/bn.png" id="headerImage" mc:label="header_image" />
             </div>
             <div class="radio-row">
-              <input type="radio" id="bcr" name="banco-selected" value="bcr">
+              <input type="radio" id="bcr" name="bcr" onchange="selectBank(`bcr`)">
               <img class="img-bancos" src="../../assets/bcr.png" id="headerImage" mc:label="header_image" />
             </div>
             <div class="radio-row">
-              <input type="radio" id="popular" name="banco-selected" value="popular">
+              <input type="radio" id="popular" name="popular" onchange="selectBank(`popular`)">
               <img class="img-bancos" src="../../assets/popular.png" id="headerImage" mc:label="header_image" />
             </div>
+            <input class="hide" id="banco-selected" name="banco-selected" />
           </div>
         </div>
       </div>
@@ -862,11 +865,11 @@
         </div>
         <div class="date-row">
           <p class="header-txt">⚠️ Fecha de Compromiso de Pago</p>
-          <input type="date" class=" short-input" autocomplete="off" placeholder="MM/YY" id="type-auth" name="type-auth"
-            oninput="this.className = 'short-input'" />
+          <input type="date" class=" short-input" autocomplete="off" placeholder="MM/YY" id="commitment-date"
+            name="commitment-date" oninput="this.className = 'short-input'" />
           <p class="pay-txt">Monto a pagar</p>
-          <input type="number" min="1" max="1000000" id="amount-to-pay" class="short-input" autocomplete="off"
-            placeholder="$$$" name="amount-to-pay" oninput="this.className = 'short-input'" />
+          <input type="number" min="1" max="1000000" id="commitment-payment" class="short-input" autocomplete="off"
+            placeholder="$$$" name="commitment-payment" oninput="this.className = 'short-input'" />
         </div>
       </div>
       <div class="tab">
@@ -893,8 +896,8 @@
         </div>
         <div class="date-row">
           <p class="header-txt">⚠️ Fecha de la llamada</p>
-          <input type="datetime-local" class="short-input" id="type-auth" name="type-auth"
-            oninput="this.className = 'short-input'" value="2018-06-12T19:30" />
+          <input type="datetime-local" class="short-input" id="contact-date" name="contact-date"
+            oninput="this.className = 'short-input'" />
         </div>
       </div>
       <div class="tab">
@@ -920,13 +923,14 @@
         if (event.data.isCamaraShotsReady) {
           nextPrev(1)
         }
-        if (event.data.channel) {
-          console.log("Dios mío", data)
-        }
+        // if (event.data.channel) {
+        //   console.log("Dios mío", data)
+        // }
       };
 
       window.addEventListener('message', function (e) {
         const data = JSON.parse(e.data);
+        console.log(data)
         // Where does the message come from
         const channel = data.channel;
       });
@@ -954,7 +958,7 @@
       }
 
       function nextPrev(n) {
-        var t = document.getElementsByName('payment-method');
+        var t = document.getElementsByName('payment-method-temp');
         // This function will figure out which tab to display
         var x = document.getElementsByClassName("tab");
         // Exit the function if any field in the current tab is invalid:
@@ -982,13 +986,10 @@
           }
         } else {
           if (currentTab === 1 && (t[0].checked || t[1].checked)) {
-            console.log("Hola 1")
             t[0].checked ? currentTab += n : currentTab = n + 2;
           } else if (currentTab === 1) {
-            console.log("Hola 2")
             currentTab = currentTab + 6;
           } else if (currentTab === 2) {
-            console.log("Hola 3")
             currentTab = currentTab + 4;
           } else if (currentTab === 3) {
             currentTab = currentTab + 3;
@@ -1003,14 +1004,15 @@
         showTab(currentTab);
         window.scrollBy(-10000, -10000);
         // if you have reached the end of the form...
-        if (currentTab >= x.length - 1) {
+        if (currentTab === 6) {
           let obj = {};
           let y = document.getElementsByTagName('input');
           for (i = 0; i < y.length; i++) {
-            if (y[i].value != '') {
+            if (y[i].value != '' && y[i].value != 'on') {
               obj[y[i].name] = y[i].value
             }
           }
+          console.log("Payload", obj)
           setTimeout(() => {
             window.top.postMessage({ isReady: true, values: obj }, '*')
           }, 3000);
@@ -1062,6 +1064,14 @@
         return valid; // return the valid status
       }
 
+      function selectPaymentMethod(type) {
+        document.getElementById('payment-method').value = type;
+      }
+
+      function selectBank(type) {
+        document.getElementById('banco-selected').value = type;
+      }
+
       function selectOperation(type) {
         document.getElementById('type-operation').value = type;
         switch (type) {
@@ -1077,12 +1087,6 @@
           default:
             break;
         }
-      }
-
-      function selectAuthMethod(type) {
-        // document.getElementById('type-auth').value = type;
-        // emit post
-        nextPrev(1);
       }
 
       function fixStepIndicator(n) {
