@@ -740,19 +740,11 @@
       <!-- Summarize Payment Info -->
       <div class="tab">
         <div class="card">
-          <h2 class="h2-gestion">Resumen de la gestión</h2>
+          <h2 class="h2-gestion">Gestión de pago</h2>
           <div class="flex-row">
-            <div>
-              <p>ID de la gestión</p>
-              <p class="value-txt">SA89-DASD-3NDI</p>
-            </div>
             <div>
               <p>Valor debido</p>
               <p class="value-txt">$ 400.000</p>
-            </div>
-            <div>
-              <p>Descripción</p>
-              <p class="value-txt">Cuentas por cobrar del mes de marzo por conceptos definidos en la automatización.</p>
             </div>
             <div>
               <p>Fecha Límite de Pago</p>
@@ -761,45 +753,26 @@
           </div>
         </div>
         <div class="card">
-          <h2 class="h2-gestion">Información del Usuario</h2>
-          <div class="flex-row">
-            <div>
-              <p>Nombre</p>
-              <p class="value-txt">Sebastián Salas</p>
-            </div>
-            <div>
-              <p>Correo</p>
-              <p class="value-txt">sebashian961@gmail.com</p>
-            </div>
-            <div>
-              <p>Celular</p>
-              <p class="value-txt">559-992-0654</p>
-            </div>
-            <div>
-              <p>Dirección</p>
-              <p class="value-txt">California, 3667 Half and Half Drive, Zip code 93212, Corcoran</p>
-            </div>
+          <div class="date-row">
+            <p class="header-txt">Monto a pagar</p>
+            <input type="number" min="1" max="1000000" id="payment-amount" class="short-input" autocomplete="off"
+              placeholder="$$$" name="payment-amount" oninput="this.className = 'short-input'" value="400000" />
           </div>
-        </div>
-        <div class="date-row">
-          <p class="header-txt">Monto a pagar</p>
-          <input type="number" min="1" max="1000000" id="payment-amount" class="short-input" autocomplete="off"
-            placeholder="$$$" name="payment-amount" oninput="this.className = 'short-input'" />
-        </div>
-        <div class="">
-          <h2 class="h2-gestion">Seleccione el método de pago</h2>
-          <div class="radio">
-            <div class="radio-row">
-              <input type="radio" id="virtual" name="payment-method-temp" onchange="selectPaymentMethod(`virtual`)">
-              <p>Tarjeta de débito/crédito</p>
+          <div class="">
+            <h2 class="h2-gestion">Seleccione el método de pago</h2>
+            <div class="radio">
+              <div class="radio-row">
+                <input type="radio" id="virtual" name="payment-method-temp" onchange="selectPaymentMethod(`virtual`)">
+                <p>Tarjeta de débito/crédito</p>
+              </div>
+              <div class="radio-row">
+                <input type="radio" id="presencial" name="payment-method-temp"
+                  onchange="selectPaymentMethod(`presencial`)">
+                <p>Transferencia Bancaria</p>
+              </div>
             </div>
-            <div class="radio-row">
-              <input type="radio" id="presencial" name="payment-method-temp"
-                onchange="selectPaymentMethod(`presencial`)">
-              <p>Transferencia Bancaria</p>
-            </div>
+            <input class="hide" id="payment-method" name="payment-method" />
           </div>
-          <input class="hide" id="payment-method" name="payment-method" />
         </div>
       </div>
       <!-- Make a payment -->
@@ -892,30 +865,20 @@
       </div>
       <div class="tab">
         <div class="card">
-          <h2 class="h2-gestion">Resumen de la gestión</h2>
-          <div class="flex-row">
-            <div>
-              <p>ID de la gestión</p>
-              <p class="value-txt">SA89-DASD-WQFT</p>
-            </div>
-            <div>
-              <p>Valor debido</p>
-              <p class="value-txt">$ 400.000</p>
-            </div>
-            <div>
-              <p>Descripción</p>
-              <p class="value-txt">Contactar a soporte.</p>
-            </div>
-            <div>
-              <p>Fecha Límite de Pago</p>
-              <p class="value-txt">12-22-23</p>
-            </div>
+          <h2 class="h2-gestion">Agendar citar</h2>
+          <div class="date-row">
+            <p class="header-txt">⚠️ Fecha de la llamada</p>
+            <input type="datetime-local" class="short-input" id="contact-date" name="contact-date"
+              oninput="this.className = 'short-input'" />
           </div>
-        </div>
-        <div class="date-row">
-          <p class="header-txt">⚠️ Fecha de la llamada</p>
-          <input type="datetime-local" class="short-input" id="contact-date" name="contact-date"
-            oninput="this.className = 'short-input'" />
+          <div class="date-row">
+            <p class="header-txt">Teléfono de Contacto</p>
+            <input type="tel" class="short-input" id="contact-date" name="contact-date"
+              oninput="this.className = 'short-input'" autocomplete="off" />
+            <p class="header-txt">Email</p>
+            <input type="tel" class="short-input" id="contact-date" name="contact-date"
+              oninput="this.className = 'short-input'" autocomplete="off" />
+          </div>
         </div>
       </div>
       <div class="tab">
