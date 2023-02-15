@@ -36,7 +36,7 @@
       font-family: Raleway;
       padding: 0 15vw;
       min-width: 400px;
-      max-width: 80vw;
+      max-width: 78vw;
     }
 
     h1 {
@@ -247,7 +247,6 @@
       padding-left: 10px;
       width: 100%;
     }
-
 
     /* Mark the steps that are finished and valid: */
     .step.finish {
@@ -552,13 +551,17 @@
         width: 100% !important;
       }
 
+      .radio-row {
+        gap: 13vw;
+      }
+
       .date-row {
         margin-left: 0px;
         gap: 10px;
       }
 
       .date-row2 {
-        margin-left: 0px;
+        margin-left: 0;
         gap: 10px;
         width: 100%;
       }
@@ -573,6 +576,7 @@
         justify-content: flex-start;
         align-items: flex-start;
         flex-direction: column;
+        gap: 20px;
       }
 
       .radio input {
@@ -606,7 +610,7 @@
         background-color: #123369;
         margin: 0px auto;
         font-family: Raleway;
-        padding: 0 40px;
+        padding: 0 20px;
         min-width: 100%;
         max-width: 1000%;
       }
@@ -861,7 +865,7 @@
 
           </div>
         </div>
-        <div class="date-row">
+        <div class="card date-row">
           <p class="header-txt">⚠️ Fecha de Compromiso de Pago</p>
           <input type="date" class=" short-input" autocomplete="off" placeholder="MM/YY" id="commitment-date"
             name="commitment-date" oninput="this.className = 'short-input'" />
@@ -877,8 +881,6 @@
             <p class="header-txt">⚠️ Fecha de la llamada</p>
             <input type="datetime-local" class="short-input" id="contact-date" name="contact-date"
               oninput="this.className = 'short-input'" />
-          </div>
-          <div class="date-row">
             <p class="header-txt">Teléfono de Contacto</p>
             <input type="tel" class="short-input" id="contact-tel" name="contact-tel"
               oninput="this.className = 'short-input'" autocomplete="off" />
