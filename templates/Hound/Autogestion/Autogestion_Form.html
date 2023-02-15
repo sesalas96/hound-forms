@@ -706,7 +706,7 @@
 <body style="height: inherit;">
   <div class="main-container">
     <div id="logo" class="img-container-logo">
-      <img class="img-logo" src="../assets/HoundLogo.png">
+      <img class="img-logo" src="https://houndsoftware.net/assetstmp/MiBanco.png">
       <span></span>
     </div>
 
@@ -779,9 +779,12 @@
       <div class="card tab">
         <div class="validation-container">
           <div class="flex-row img-card-container">
-            <img class="img-card" src="../../assets/mastercard.png" id="headerImage" mc:label="header_image" />
-            <img class="img-card2" src="../../assets/visa.png" id="headerImage" mc:label="header_image" />
-            <img class="img-card" src="../../assets/wu.png" id="headerImage" mc:label="header_image" />
+            <img class="img-card" src="https://houndsoftware.net/assetstmp/mastercard-1.png" id="headerImage"
+              mc:label="header_image" />
+            <img class="img-card2" src="https://houndsoftware.net/assetstmp/visa.png" id="headerImage"
+              mc:label="header_image" />
+            <img class="img-card" src="https://houndsoftware.net/assetstmp/wu.png" id="headerImage"
+              mc:label="header_image" />
           </div>
           <div class="flex-row">
             <p class="hd-txt">Número de la tarjeta</p>
@@ -812,19 +815,23 @@
           <div class="radio">
             <div class="radio-row">
               <input type="radio" id="bac" name="banco-selected2" onchange="selectBank(`bac`)">
-              <img class="img-bancos" src="../../assets/bac.png" id="headerImage" mc:label="header_image" />
+              <img class="img-bancos" src="https://houndsoftware.net/assetstmp/bac.png" id="headerImage"
+                mc:label="header_image" />
             </div>
             <div class="radio-row">
               <input type="radio" id="bn" name="banco-selected2" onchange="selectBank(`bn`)">
-              <img class="img-bancos" src="../../assets/bn.png" id="headerImage" mc:label="header_image" />
+              <img class="img-bancos" src="https://houndsoftware.net/assetstmp/bn.png" id="headerImage"
+                mc:label="header_image" />
             </div>
             <div class="radio-row">
               <input type="radio" id="bcr" name="banco-selected2" onchange="selectBank(`bcr`)">
-              <img class="img-bancos" src="../../assets/bcr.png" id="headerImage" mc:label="header_image" />
+              <img class="img-bancos" src="https://houndsoftware.net/assetstmp/bcr-1.png" id="headerImage"
+                mc:label="header_image" />
             </div>
             <div class="radio-row">
               <input type="radio" id="popular" name="banco-selected2" onchange="selectBank(`popular`)">
-              <img class="img-bancos" src="../../assets/popular.png" id="headerImage" mc:label="header_image" />
+              <img class="img-bancos" src="https://houndsoftware.net/assetstmp/popular.png" id="headerImage"
+                mc:label="header_image" />
             </div>
             <input class="hide" id="banco-selected" name="banco-selected" />
           </div>
@@ -873,10 +880,10 @@
           </div>
           <div class="date-row">
             <p class="header-txt">Teléfono de Contacto</p>
-            <input type="tel" class="short-input" id="contact-date" name="contact-date"
+            <input type="tel" class="short-input" id="contact-tel" name="contact-tel"
               oninput="this.className = 'short-input'" autocomplete="off" />
             <p class="header-txt">Email</p>
-            <input type="tel" class="short-input" id="contact-date" name="contact-date"
+            <input type="email" class="short-input" id="contact-email" name="contact-email"
               oninput="this.className = 'short-input'" autocomplete="off" />
           </div>
         </div>
@@ -885,13 +892,13 @@
         <div class="loading-form">
           <div class="send-row">
             <h2>
-              Enviando autogestión
+              Enviando respuesta
             </h2>
             <div class="dot-typing"></div>
           </div>
           <div class="img-container-logo">
             <h2 class="pwr-hound">Powered by</h2>
-            <img class="img-logo" src="../assets/HoundLogo.png">
+            <img class="img-logo" src="https://houndsoftware.net/assetstmp/hound-white.png">
             <span></span>
           </div>
         </div>
@@ -904,7 +911,7 @@
       </div>
     </form>
     <script>
-      let currentTab = 0; // Current tab is set to be the first tab (0)
+      let currentTab = 6; // Current tab is set to be the first tab (0)
       showTab(currentTab); // Display the current tab
 
       window.onmessage = function (event) {
