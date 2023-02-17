@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html style="background-color: #123369;">
+<html style="background-color: #126958;">
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/x-icon" href="https://houndsoftware.net/assetstmp/fav.png?_t=1673298107" />
   <!-- Facebook sharing information tags -->
-  <meta property="og:title" content="Autogestión" />
+  <meta property="og:title" content="Eight Steps" />
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
-  <title>Autogestión</title>
+  <title>Eight Steps</title>
   <style>
     #outlook a {
       padding: 0;
@@ -30,8 +30,8 @@
       overflow: none;
     }
 
-    #autogestion-form {
-      background-color: #123369;
+    #four-steps-form {
+      background-color: #126958;
       margin: 0px auto;
       font-family: Raleway;
       padding: 0 17vw;
@@ -130,7 +130,7 @@
       width: 120px;
       background-color: rgb(241, 238, 238);
       border-radius: 20px;
-      color: #123369;
+      color: #126958;
       margin-top: 50px;
       margin-bottom: 70px;
       font-weight: 900;
@@ -368,7 +368,7 @@
     }
 
     .color-blue {
-      color: #123369;
+      color: #126958;
     }
 
     .center {
@@ -394,7 +394,7 @@
     }
 
     .img-container-logo {
-      background-color: #123369;
+      background-color: #126958;
       display: flex;
       justify-content: space-evenly;
       height: 120px;
@@ -512,8 +512,8 @@
     }
 
     @media only screen and (max-width: 1000px) {
-      #autogestion-form {
-        background-color: #123369;
+      #four-steps-form {
+        background-color: #126958;
         margin: 0px auto;
         font-family: Raleway;
         padding: 0 17vw;
@@ -606,11 +606,11 @@
         border-radius: 10px;
       }
 
-      #autogestion-form {
-        background-color: #123369;
+      #four-steps-form {
+        background-color: #126958;
         margin: 0px auto;
         font-family: Raleway;
-        padding: 0 20px;
+        padding: 0 2.5rem;
         min-width: 100%;
         max-width: 1000%;
       }
@@ -647,7 +647,7 @@
         width: 120px;
         background-color: rgb(241, 238, 238);
         border-radius: 20px;
-        color: #123369;
+        color: #126958;
         margin-top: 50px;
         margin-bottom: 70px;
         font-weight: 900;
@@ -714,34 +714,46 @@
       <span></span>
     </div>
 
-    <form id="autogestion-form">
-      <h1 id="main-header" style="margin-top: 4vh;">Autogestión</h1>
+    <form id="four-steps-form">
+      <h1 id="main-header" style="margin-top: 4vh;">Eight Steps Demo</h1>
       <div style="text-align: center; margin-top: 4vh;">
         <div id="stepper">
           <span class="step"></span>
           <span class="step"></span>
           <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
         </div>
       </div>
-      <!-- Circles which indicates the steps of the form: -->
-      <!-- Swither -->
       <div class="tab">
         <p class="sub-header">Indiquenos el tipo de gestión a realizar</p>
-        <button class="btn btn-ahorros" type="button" id="ahorros-btn" onclick="selectOperation(`payment`)">
+        <button class="btn btn-ahorros" type="button" id="ahorros-btn" onclick="selectOperation(`A`)">
           <img class="img-program" src="https://houndsoftware.net/assetstmp/coin-collecting2.png" alt="" />
-          <p class="color-blue">Pagar</p>
-        </button><button class="btn btn-compromiso" type="button" id="ahorros-btn"
-          onclick="selectOperation(`commitment`)">
+          <p class="color-blue">Gestión A</p>
+        </button><button class="btn btn-compromiso" type="button" id="ahorros-btn" onclick="selectOperation(`B`)">
           <img class="img-program" src="https://houndsoftware.net/assetstmp/receipt.png" alt="" />
-          <p>Compromiso de pago</p>
+          <p>Gestión B</p>
         </button>
-        <button class="btn btn-corriente" type="button" id="corriente-btn" onclick="selectOperation(`contact-center`)">
+        <button class="btn btn-corriente" type="button" id="corriente-btn" onclick="selectOperation(`C`)">
           <img class="img-program" src="https://houndsoftware.net/assetstmp/coin-collecting.png" />
-          <p>Agendar una cita</p>
+          <p>Gestión C</p>
         </button>
         <input id="type-operation" class="hide" id="operation" name="type-operation" />
       </div>
-      <!-- Summarize Payment Info -->
+      <div class="tab">
+        <div class="card">
+          <h2 class="h2-gestion">Gestión de pago</h2>
+          <div class="flex-row">
+            <div>
+              <p>Valor debido</p>
+              <p class="value-txt">$ 50.000</p>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="tab">
         <div class="card">
           <h2 class="h2-gestion">Gestión de pago</h2>
@@ -755,123 +767,6 @@
               <p class="value-txt">12-22-23</p>
             </div>
           </div>
-        </div>
-        <div class="card">
-          <div class="date-row">
-            <p class="header-txt">Monto a pagar</p>
-            <input type="number" min="1" max="1000000" id="payment-amount" class="short-input" autocomplete="off"
-              placeholder="$$$" name="payment-amount" oninput="this.className = 'short-input'" value="400000" />
-          </div>
-          <div class="">
-            <h2 class="h2-gestion">Seleccione el método de pago</h2>
-            <div class="radio">
-              <div class="radio-row">
-                <input type="radio" id="virtual" name="payment-method-temp" onchange="selectPaymentMethod(`virtual`)">
-                <p>Tarjeta de débito/crédito</p>
-              </div>
-              <div class="radio-row">
-                <input type="radio" id="presencial" name="payment-method-temp"
-                  onchange="selectPaymentMethod(`presencial`)">
-                <p>Transferencia Bancaria</p>
-              </div>
-            </div>
-            <input class="hide" id="payment-method" name="payment-method" />
-          </div>
-        </div>
-      </div>
-      <!-- Make a payment -->
-      <div class="card tab">
-        <div class="validation-container">
-          <div class="flex-row img-card-container">
-            <img class="img-card" src="https://houndsoftware.net/assetstmp/mastercard-1.png" id="headerImage"
-              mc:label="header_image" />
-            <img class="img-card2" src="https://houndsoftware.net/assetstmp/visa.png" id="headerImage"
-              mc:label="header_image" />
-            <img class="img-card" src="https://houndsoftware.net/assetstmp/wu.png" id="headerImage"
-              mc:label="header_image" />
-          </div>
-          <div class="flex-row">
-            <p class="hd-txt">Número de la tarjeta</p>
-            <input class="short-input" autocomplete="off" placeholder="XXXXX XXXXX XXXXX XXXXX" id="card-holder"
-              name="card-holder" oninput="this.className = 'short-input'" />
-          </div>
-          <div class="flex-row">
-            <p class="hd-txt">Fecha de expiración</p>
-            <input type="date" class=" short-input" autocomplete="off" placeholder="MM/YY" id="expired-date"
-              name="expired-date" oninput="this.className = 'short-input'" />
-          </div>
-          <div class="flex-row">
-            <p class="hd-txt">CVC</p>
-            <input class="short-input" autocomplete="off" placeholder="123" id="cvv" name="cvv"
-              oninput="this.className = 'short-input'" />
-          </div>
-        </div>
-      </div>
-      <!-- Make a commitment -->
-      <div class="tab card">
-        <div class="validation-container">
-          <h2 class="h2-gestion">Institución Bancaria</h2>
-          <div class="flex-row center" style="margin-top: 3vh;margin-bottom: 3vh;">
-            <p>⚠️ Fecha límite para pagar</p>
-            <p class="value-txt">12/12/23</p>
-          </div>
-          <p>Indiquenos en donde realizará el pago</p>
-          <div class="radio">
-            <div class="radio-row">
-              <input type="radio" id="bac" name="banco-selected2" onchange="selectBank(`bac`)">
-              <img class="img-bancos" src="https://houndsoftware.net/assetstmp/bac.png" id="headerImage"
-                mc:label="header_image" />
-            </div>
-            <div class="radio-row">
-              <input type="radio" id="bn" name="banco-selected2" onchange="selectBank(`bn`)">
-              <img class="img-bancos" src="https://houndsoftware.net/assetstmp/bn.png" id="headerImage"
-                mc:label="header_image" />
-            </div>
-            <div class="radio-row">
-              <input type="radio" id="bcr" name="banco-selected2" onchange="selectBank(`bcr`)">
-              <img class="img-bancos" src="https://houndsoftware.net/assetstmp/bcr-1.png" id="headerImage"
-                mc:label="header_image" />
-            </div>
-            <div class="radio-row">
-              <input type="radio" id="popular" name="banco-selected2" onchange="selectBank(`popular`)">
-              <img class="img-bancos" src="https://houndsoftware.net/assetstmp/popular.png" id="headerImage"
-                mc:label="header_image" />
-            </div>
-            <input class="hide" id="banco-selected" name="banco-selected" />
-          </div>
-        </div>
-      </div>
-      <!-- Make a commitment -->
-      <div class="tab">
-        <div class="card">
-          <h2 class="h2-gestion">Creación de compromiso de pago</h2>
-          <div class="flex-row">
-            <div>
-              <p>ID de la gestión</p>
-              <p class="value-txt">SA89-DASD-WWWT</p>
-            </div>
-            <div>
-              <p>Valor debido</p>
-              <p class="value-txt">$ 400.000</p>
-            </div>
-            <div>
-              <p>Descripción</p>
-              <p class="value-txt">Compromiso de pagos.</p>
-            </div>
-            <div>
-              <p>Fecha Límite de Pago</p>
-              <p class="value-txt">12-22-23</p>
-            </div>
-
-          </div>
-        </div>
-        <div class="card date-row">
-          <p class="header-txt">⚠️ Fecha de Compromiso de Pago</p>
-          <input type="date" class=" short-input" autocomplete="off" placeholder="MM/YY" id="commitment-date"
-            name="commitment-date" oninput="this.className = 'short-input'" />
-          <p class="pay-txt">Monto a pagar</p>
-          <input type="number" min="1" max="1000000" id="commitment-payment" class="short-input" autocomplete="off"
-            placeholder="$$$" name="commitment-payment" oninput="this.className = 'short-input'" />
         </div>
       </div>
       <div class="tab">
@@ -887,6 +782,60 @@
             <p class="header-txt">Email</p>
             <input type="email" class="short-input" id="contact-email" name="contact-email"
               oninput="this.className = 'short-input'" autocomplete="off" />
+          </div>
+        </div>
+      </div>
+      <div class="tab">
+        <div class="card">
+          <h2 class="h2-gestion">Gestión de pago</h2>
+          <div class="flex-row">
+            <div>
+              <p>Valor debido</p>
+              <p class="value-txt">$ 50.000</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab">
+        <div class="card">
+          <h2 class="h2-gestion">Agendar citar</h2>
+          <div class="date-row">
+            <p class="header-txt">Teléfono de Contacto</p>
+            <input type="tel" class="short-input" id="contact-tel" name="contact-tel"
+              oninput="this.className = 'short-input'" autocomplete="off" />
+            <p class="header-txt">Email</p>
+            <input type="email" class="short-input" id="contact-email" name="contact-email"
+              oninput="this.className = 'short-input'" autocomplete="off" />
+          </div>
+        </div>
+      </div>
+      <div class="tab">
+        <div class="card">
+          <h2 class="h2-gestion">Gestión de pago</h2>
+          <div class="flex-row">
+            <div>
+              <p>Valor debido</p>
+              <p class="value-txt">$ 50.000</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab">
+        <div class="card">
+          <h2 class="h2-gestion">Gestión de pago</h2>
+          <div class="flex-row">
+            <div>
+              <p>Valor debido</p>
+              <p class="value-txt">$ 50.000</p>
+            </div>
+            <div>
+              <p>Valor real</p>
+              <p class="value-txt">$ 10.000</p>
+            </div>
+            <div>
+              <p>Valor neto</p>
+              <p class="value-txt">$ 20.000</p>
+            </div>
           </div>
         </div>
       </div>
@@ -933,7 +882,6 @@
       });
 
       function showTab(n) {
-
         if (n === 0) {
           document.getElementById('logo').style.display = 'flex';
         } else {
@@ -943,7 +891,7 @@
         var x = document.getElementsByClassName('tab');
         x[n].style.display = 'block';
         //... and fix the Previous/Next buttons:
-        if (n == 0 || n == x.length - 1 || n == 0) {
+        if (n == 0 || n == 8) {
           document.getElementById('prevBtn').style.display = 'none';
           document.getElementById('nextBtn').style.display = 'none';
         } else {
@@ -951,21 +899,20 @@
           document.getElementById('nextBtn').style.display = 'inline';
           document.getElementById('stepper').style.display = 'inline';
         }
-        if (n === 6) {
-          document.getElementById('stepper').style.display = 'none';
-          document.getElementById('main-header').style.display = 'none';
-        }
-        if (n == 3 || n == 4 || n == 5 || n == 2) {
+        if (n == x.length - 2) {
           document.getElementById('nextBtn').innerHTML = 'Finalizar';
         } else {
           document.getElementById('nextBtn').innerHTML = 'Siguiente';
+        }
+        if (n === 8) {
+          document.getElementById('stepper').style.display = 'none';
+          document.getElementById('main-header').style.display = 'none';
         }
         //... and run a function that will display the correct step indicator:
         fixStepIndicator(n);
       }
 
       function nextPrev(n) {
-        var t = document.getElementsByName('payment-method-temp');
         // This function will figure out which tab to display
         var x = document.getElementsByClassName("tab");
         // Exit the function if any field in the current tab is invalid:
@@ -973,45 +920,11 @@
         // Hide the current tab:
         x[currentTab].style.display = "none";
         // Increase or decrease the current tab by 1:
-        if (n === -1) {
-          switch (currentTab) {
-            case 2:
-              currentTab = currentTab + n;
-              break;
-            case 3:
-              currentTab = currentTab + n - 1;
-              break;
-            case 4:
-              currentTab = 0;
-              break;
-            case 5:
-              currentTab = 0;
-              break;
-            default:
-              currentTab += n;
-              break;
-          }
-        } else {
-          if (currentTab === 1 && (t[0].checked || t[1].checked)) {
-            t[0].checked ? currentTab += n : currentTab = n + 2;
-          } else if (currentTab === 1) {
-            currentTab = currentTab + 6;
-          } else if (currentTab === 2) {
-            currentTab = currentTab + 4;
-          } else if (currentTab === 3) {
-            currentTab = currentTab + 3;
-          } else if (currentTab === 4) {
-            currentTab = currentTab + 2;
-          } else if (currentTab === 5) {
-            currentTab = currentTab + 1;
-          } else {
-            currentTab = currentTab + n;
-          }
-        }
+        currentTab = currentTab + n
         showTab(currentTab);
         window.scrollBy(-10000, -10000);
         // if you have reached the end of the form...
-        if (currentTab === 6) {
+        if (currentTab === 8) {
           let obj = {};
           let y = document.getElementsByTagName('input');
           for (i = 0; i < y.length; i++) {
@@ -1032,6 +945,15 @@
         nextPrev(1);
       }
 
+      function selectOperation(type) {
+        document.getElementById('type-operation').value = type;
+        nextPrev(1);
+      }
+
+      function selectPaymentMethod(type) {
+        document.getElementById('payment-method').value = type;
+      }
+
       function validateForm() {
         // This function deals with validation of the form fields
         var x,
@@ -1040,7 +962,6 @@
           valid = true;
         x = document.getElementsByClassName('tab');
         y = x[currentTab].getElementsByTagName('input');
-        t = x[currentTab].getElementsByTagName('textarea');
         // A loop that checks every input field in the current tab:
         if (currentTab === 0) {
           valid = true;
@@ -1056,44 +977,8 @@
               y[i].className += '';
             }
           }
-          for (i = 0; i < t.length; i++) {
-            // If a field is empty...
-            if (t[i].value == '') {
-              // add an "invalid" class to the field:
-              t[i].className += ' invalid';
-              // and set the current valid status to false
-              valid = false;
-            } else {
-              t[i].className += '';
-            }
-          }
         }
         return valid; // return the valid status
-      }
-
-      function selectPaymentMethod(type) {
-        document.getElementById('payment-method').value = type;
-      }
-
-      function selectBank(type) {
-        document.getElementById('banco-selected').value = type;
-      }
-
-      function selectOperation(type) {
-        document.getElementById('type-operation').value = type;
-        switch (type) {
-          case "payment":
-            nextPrev(1);
-            break;
-          case "commitment":
-            nextPrev(4);
-            break;
-          case "contact-center":
-            nextPrev(5);
-            break;
-          default:
-            break;
-        }
       }
 
       function fixStepIndicator(n) {
@@ -1101,29 +986,11 @@
         var i,
           x = document.getElementsByClassName('step');
         try {
-          let stepValue = 1
-          switch (n) {
-            case 3:
-              stepValue = 2
-              break;
-            case 4:
-              stepValue = 1
-              break;
-            case 5:
-              stepValue = 1
-              break;
-            case 6:
-              stepValue = 2
-              break;
-            default:
-              stepValue = n
-          }
-
           for (i = 0; i < x.length; i++) {
             x[i].className = x[i].className.replace('active', '');
           }
           //... and adds the "active" class on the current step:
-          x[stepValue].className += ' active';
+          x[n].className += ' active';
         } catch (error) {
 
         }
